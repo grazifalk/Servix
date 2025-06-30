@@ -1,16 +1,16 @@
--- 01. Ranking de técnicos por quantidade de ordens concluídas:
+-- 01. Ranking de tÃ©cnicos por quantidade de ordens concluÃ­das:
 SELECT t.Nome, COUNT(o.OrdemID) AS TotalOrdens
 FROM Tecnicos t
 JOIN Ordens o ON t.TecnicoID = o.TecnicoID
-WHERE o.Status = 'Concluída'
+WHERE o.Status = 'ConcluÃ­da'
 GROUP BY t.Nome
 ORDER BY TotalOrdens DESC;
 
--- 02. Tempo médio de atendimento por cliente:
+-- 02. Tempo mÃ©dio de atendimento por cliente:
 SELECT c.Nome, AVG(DATEDIFF(DAY, o.DataConclusao, o.DataAbertura)) AS TempoMedioDias
 FROM Clientes c
 JOIN Ordens o ON c.ClienteID = o.ClienteID
-WHERE o.Status = 'Concluída'
+WHERE o.Status = 'ConcluÃ­da'
 GROUP BY c.Nome;
 
 -- 03. CTE - Quantidade de produtos utilizados por ordem:
@@ -22,7 +22,7 @@ WITH ProdutosPorOrdem AS (
 )
 SELECT * FROM ProdutosPorOrdem;
 
--- 04. Window Function: Quantas ordens cada cliente já teve:
+-- 04. Window Function: Quantas ordens cada cliente jÃ¡ teve:
 SELECT
   OrdemID,
   ClienteID,
@@ -40,7 +40,7 @@ EXEC sp_TotalOrdensPorCliente;
 
 EXEC sp_ServicosMaisUtilizadosPorMes @Ano = 2024, @Mes = 2;
 
--- 06. CTE - Ranking de técnicos por número de ordens concluídas:
+-- 06. CTE - Ranking de tÃ©cnicos por nÃºmero de ordens concluÃ­das:
 WITH OrdensConcluidasPorTecnico AS (
     SELECT 
         t.TecnicoID,
@@ -51,7 +51,7 @@ WITH OrdensConcluidasPorTecnico AS (
     JOIN 
         Ordens o ON t.TecnicoID = o.TecnicoID
     WHERE 
-        o.Status = 'Concluída'
+        o.Status = 'ConcluÃ­da'
     GROUP BY 
         t.TecnicoID, t.Nome
 ) SELECT 
@@ -61,7 +61,7 @@ WITH OrdensConcluidasPorTecnico AS (
 FROM 
     OrdensConcluidasPorTecnico;
 
--- 07. CTE - Ranking mensal de técnicos (comparação mês a mês):
+-- 07. CTE - Ranking mensal de tÃ©cnicos (comparaÃ§Ã£o mÃªs a mÃªs):
 WITH OrdensPorMes AS (
     SELECT 
         t.Nome AS NomeTecnico,
@@ -73,7 +73,7 @@ WITH OrdensPorMes AS (
     JOIN 
         Ordens o ON t.TecnicoID = o.TecnicoID
     WHERE 
-        o.Status = 'Concluída'
+        o.Status = 'ConcluÃ­da'
     GROUP BY 
         t.Nome, YEAR(o.DataConclusao), MONTH(o.DataConclusao)
 ) SELECT 
@@ -92,14 +92,14 @@ SELECT * FROM vw_TotalOrdensPorTecnico;
 SELECT * FROM vw_OrdensConcluidasPorTecnico;
 SELECT * FROM vw_TempoMedioAtendimentoTecnico;
 
--- 09. Usando Função escalar:
-	-- Tempo médio de atendimento por técnico:
+-- 09. Usando FunÃ§Ãµes:
+	-- Tempo mÃ©dio de atendimento por tÃ©cnico:
 	SELECT dbo.fn_TempoMedioPorTecnico(3) AS MediaDias;
 
-	-- Tempo médio de atendimento por cliente:
+	-- Tempo mÃ©dio de atendimento por cliente:
 	SELECT dbo.fn_TempoMedioPorCliente(5) AS MediaDias;
 
-	-- Retornar o status de conclusão de uma ordem baseado em uma data de conclusão:
+	-- Retornar o status de conclusÃ£o de uma ordem baseado em uma data de conclusÃ£o:
 		SELECT
 		  OrdemID,
 		  DataConclusao,
@@ -111,7 +111,7 @@ SELECT * FROM ORDENS WHERE ORDEMID = 21;
 UPDATE Ordens SET DataConclusao = '2025-06-30' WHERE OrdemID = 21 AND Status = 'Em andamento';
 SELECT * FROM ORDENS WHERE ORDEMID = 21;
 
--- 11. Trigger para registrar log de alteração de status
+-- 11. Trigger para registrar log de alteraÃ§Ã£o de status
 SELECT OrdemID, Status FROM Ordens WHERE OrdemID = 23;
 SELECT * FROM LogAlteracaoStatus WHERE OrdemID = 23;
 
