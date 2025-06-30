@@ -8,7 +8,8 @@ O banco de dados simula um sistema de controle de ordens de serviço, contendo i
 
 ## Estrutura
 O projeto contém os seguintes arquivos:
-- `script_projeto.sql`: Criação do banco de dados, tabelas e inserção de dados simulados.
+- `script_projeto.sql`: Criação do banco de dados e tabelas.
+- `script_dados.sql`: Inserção de dados simulados nas tabelas.
 - `consultas_exemplos.sql`: Consultas avançadas, procedimentos, triggers e exemplos práticos.
 
 ## Estrutura do Banco de Dados
