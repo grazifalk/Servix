@@ -12,6 +12,7 @@ O projeto contém os seguintes arquivos:
 - `script_dados.sql`: Inserção de dados simulados nas tabelas.
 - `criar_procedures.sql`: Script para criação de Stored Procedures.
 - `criar_views.sql`: Script para criação de Views.
+- `criar_functions.sql`: Script para criação de Functions.
 - `consultas.sql`: Consultas avançadas, procedimentos, triggers e exemplos práticos.
 
 ## Estrutura do Banco de Dados
@@ -48,4 +49,5 @@ O banco contém as seguintes tabelas:
 2. Execute o arquivo `script_dados.sql` para inserir dados simulados nas tabelas.
 3. Execute o arquivo `criar_procedures.sql` para criar Stored Procedures.
 4. Execute o arquivo `criar_views.sql` para criar Views.
-5. Consulte o arquivo `consultas.sql` para exemplos práticos.
+5. Execute o arquivo `criar_functions.sql` para criar Functions.
+6. Consulte o arquivo `consultas.sql` para exemplos práticos.
