@@ -10,7 +10,7 @@ O banco de dados simula um sistema de controle de ordens de serviço, contendo i
 O projeto contém os seguintes arquivos:
 - `script_projeto.sql`: Criação do banco de dados e tabelas.
 - `script_dados.sql`: Inserção de dados simulados nas tabelas.
-- `consultas_exemplos.sql`: Consultas avançadas, procedimentos, triggers e exemplos práticos.
+- `consultas.sql`: Consultas avançadas, procedimentos, triggers e exemplos práticos.
 
 ## Estrutura do Banco de Dados
 O banco contém as seguintes tabelas:
@@ -42,5 +42,6 @@ O banco contém as seguintes tabelas:
 6. Trigger para atualização automática de status.
 
 ## Como Executar
-1. Execute o arquivo `script_projeto.sql` no seu banco de dados.
-2. Consulte o arquivo `consultas_exemplos.sql` para exemplos práticos.
+1. Execute o arquivo `script_projeto.sql` para criar o banco de dados e as tabelas.
+2. Execute o arquivo `script_dados.sql` para inserir dados simulados nas tabelas.
+3. Consulte o arquivo `consultas.sql` para exemplos práticos.
