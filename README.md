@@ -25,7 +25,7 @@ O banco contém as seguintes tabelas:
 - **Serviços**: Descrição dos serviços executados em cada ordem.
 - **LogAlteracaoStatus**: Log para registrar alteração de status.
 
-![image](https://github.com/user-attachments/assets/a993176c-4dd0-4ae1-8d99-5cdb553fccf6)
+![image](https://github.com/user-attachments/assets/f6f41008-6662-410d-aed4-cb80b0f30f8f)
 
 ## Tecnologias
 - SQL Server
